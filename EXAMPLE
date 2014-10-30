@@ -1,0 +1,12 @@
+./poodle-sniffer.py examplehosts.txt --ports "443 8443 993 995"
+./poodle-sniffer.py examplehosts.txt --ports "443,8443,993,995"
+./poodle-sniffer.py examplehosts.txt --ports "443;8443;993;995"
+./poodle-sniffer.py --ports "443, 993, 995" hostlist.txt
+./poodle-sniffer.py --port 443 --port 993 --port 995 hostlist.txt
+echo www.google.de | ./poodle-sniffer.py
+echo www.google.de | ./poodle-sniffer.py -
+./poodle-sniffer.py hostlist1.txt hostlist2.txt
+echo www.google.com | ./poodle-sniffer.py --ports "443, 993, 995" --concise | egrep --color '[[:digit:]]+!|'
+./poodle-sniffer.py --hosts www.google.com
+./poodle-sniffer.py --ports "1-100 200-300" -H www.google.com
+./poodle-sniffer.py --hosts "www.google.com:80-88,443-445"
